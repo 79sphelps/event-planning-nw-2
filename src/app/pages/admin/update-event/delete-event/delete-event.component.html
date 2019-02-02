@@ -1,0 +1,48 @@
+<!-- <div hidden>{{ eventList && eventList.length }}</div> -->
+
+<section class="home-slider owl-carousel">
+    <div
+      class="slider-item"
+      style="background-image: url('../../../assets/images/skyline.png');"
+      data-stellar-background-ratio="0.5"
+    >
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-md-10 col-sm-12 ftco-animate text-center">
+            <p class="breadcrumbs">
+              <span class="mr-2"><a href="/" routerLink="/">Home</a></span>
+              <span>Delete Event</span>
+            </p>
+            <h1 class="mb-3">Delete Event</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- src/app/pages/admin/update-event/delete-event.component/delete-event.component.html -->
+<p class="lead">
+  You are deleting the "
+  <strong [innerHTML]="event.title"></strong>" event.
+</p>
+
+<p class="text-danger">
+  Deleting this event will also remove all associated RSVPs. Please proceed with caution!
+</p>
+
+<div class="form-group">
+  <label for="deleteEvent">Confirm event title:</label>
+  <input type="text" id="deleteEvent" class="form-control" [(ngModel)]="confirmDelete">
+</div>
+
+<!-- Delete button -->
+<p>
+  <button class="btn btn-danger" (click)="removeEvent()" [disabled]="confirmDelete !== event.title || submitting">Delete Event</button>
+  <app-submitting *ngIf="submitting"></app-submitting>
+</p>
+
+<!-- Error deleting event -->
+<p *ngIf="error" class="alert alert-danger">
+  <strong>Oops!</strong> There was an error deleting this event. Please try again.
+</p>

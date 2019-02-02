@@ -1,0 +1,286 @@
+<div hidden>{{ eventList && eventList.length }}</div>
+
+<app-loading *ngIf="loading"></app-loading>
+
+<section *ngIf="utils.isLoaded(loading)" class="ftco-section bg-light">
+
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-5">
+      <div class="col-md-7 text-center heading-section ftco-animate">
+        <span class="subheading">Services and Events</span>
+        <h2>Services Offered</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 events-list">
+        <div
+          class="nav nav-pills justify-content-center ftco-animate"
+          id="v-pills-tab"
+          role="tablist"
+          aria-orientation="vertical"
+        >
+          <a
+            class="nav-link py-3 px-4 active"
+            id="v-pills-home-tab"
+            data-toggle="pill"
+            href="#v-pills-home"
+            role="tab"
+            aria-controls="v-pills-home"
+            aria-selected="true"
+            ><span class="icon-event_seat"></span> Small Groups</a
+          >
+          <a
+            class="nav-link py-3 px-4"
+            id="v-pills-profile-tab"
+            data-toggle="pill"
+            href="#v-pills-profile"
+            role="tab"
+            aria-controls="v-pills-profile"
+            aria-selected="false"
+            ><span class="icon-party_mode"></span> Medium Groups</a
+          >
+          <a
+            class="nav-link py-3 px-4"
+            id="v-pills-messages-tab"
+            data-toggle="pill"
+            href="#v-pills-messages"
+            role="tab"
+            aria-controls="v-pills-messages"
+            aria-selected="false"
+            ><span class="icon-local_drink"></span> Large Groups</a
+          >
+        </div>
+
+        <div class="tab-content py-5" id="v-pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="v-pills-home"
+            role="tabpanel"
+            aria-labelledby="v-pills-home-tab"
+          >
+            <div class="row">
+              <div class="col-lg-12">
+                <!-- <div class="menu-img" style="background-image: url(../../{{event.thumbnail}});"></div> -->
+                <!-- <div class="menu-img" style="background-image: url(../../assets/images/photo-1.jpg);"></div> -->
+
+                <div *ngFor="let event of eventList" style="background: white;">
+                  <div *ngIf="event.groupSize === 'Small'">
+                    <div class="menus d-flex ftco-animate">
+                      <div
+                        class="menu-img"
+                        [style.background-image]="
+                          getBackground(event.thumbnail)
+                        "
+                      ></div>
+                      <div class="text d-flex">
+                        <!-- <div class="one-half"> -->
+                        <div>
+                          <h3>{{ event.title }}</h3>
+                          <p>
+                            <span>{{ event.description }}</span>
+                          </p>
+                        </div>
+                        <!--
+                        <div class="one-forth">
+                          <span class="price">{{ event.groupSize }}</span>
+                        </div>
+                        -->
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+
+              <!--
+              <div class="col-lg-6">
+                <div *ngFor="let event of eventList" style="background: white;">
+                  <div *ngIf="event.groupSize === 'Small'">
+                    <div class="menus d-flex ftco-animate">
+                      <div
+                        class="menu-img"
+                        [style.background-image]="
+                          getBackground(event.thumbnail)
+                        "
+                      ></div>
+                      <div class="text d-flex">
+                        <div class="one-half">
+                          <h3>{{ event.title }}</h3>
+                          <p>
+                            <span>{{ event.purpose }}</span>
+                          </p>
+                        </div>
+                        <div class="one-forth">
+                          <span class="price">{{ event.groupSize }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+            -->
+
+            </div>
+          </div>
+          <!-- END -->
+
+          <div
+            class="tab-pane fade"
+            id="v-pills-profile"
+            role="tabpanel"
+            aria-labelledby="v-pills-profile-tab"
+          >
+            <div class="row">
+              <div class="col-lg-12">
+                <div *ngFor="let event of eventList" style="background: white;">
+                  <div *ngIf="event.groupSize === 'Medium'">
+                    <div class="menus d-flex ftco-animate">
+                      <div
+                        class="menu-img"
+                        [style.background-image]="
+                          getBackground(event.thumbnail)
+                        "
+                      ></div>
+                      <div class="text d-flex">
+                        <!-- <div class="one-half"> -->
+                        <div>
+                          <h3>{{ event.title }}</h3>
+                          <p>
+                            <span>{{ event.description }}</span>
+                          </p>
+                        </div>
+                        <!--
+                        <div class="one-forth">
+                          <span class="price">{{ event.groupSize }}</span>
+                        </div>
+                        -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!--
+              <div class="col-lg-6">
+                <div *ngFor="let event of eventList" style="background: white;">
+                  <div *ngIf="event.groupSize === 'Medium'">
+                    <div class="menus d-flex ftco-animate">
+                      <div
+                        class="menu-img"
+                        [style.background-image]="
+                          getBackground(event.thumbnail)
+                        "
+                      ></div>
+                      <div class="text d-flex">
+                        <div class="one-half">
+                          <h3>{{ event.title }}</h3>
+                          <p>
+                            <span>{{ event.purpose }}</span>
+                          </p>
+                        </div>
+                        <div class="one-forth">
+                          <span class="price">{{ event.groupSize }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              -->
+            </div>
+          </div>
+          <!-- END -->
+
+          <div
+            class="tab-pane fade"
+            id="v-pills-messages"
+            role="tabpanel"
+            aria-labelledby="v-pills-messages-tab"
+          >
+            <div class="row">
+              <div class="col-lg-12">
+                <div *ngFor="let event of eventList" style="background: white;">
+                  <div *ngIf="event.groupSize === 'Large'">
+                    <div class="menus d-flex ftco-animate">
+                      <div
+                        class="menu-img"
+                        [style.background-image]="
+                          getBackground(event.thumbnail)
+                        "
+                      ></div>
+                      <div class="text d-flex">
+                        <!-- <div class="one-half"> -->
+                        <div>
+                          <h3>{{ event.title }}</h3>
+                          <p>
+                            <span>{{ event.description }}</span>
+                          </p>
+                        </div>
+                        <!--
+                        <div class="one-forth">
+                          <span class="price">{{ event.groupSize }}</span>
+                        </div>
+                        -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+
+              <!--
+              <div class="col-lg-6">
+                <div *ngFor="let event of eventList" style="background: white;">
+                  <div *ngIf="event.groupSize === 'Large'">
+                    <div class="menus d-flex ftco-animate">
+                      <div
+                        class="menu-img"
+                        [style.background-image]="
+                          getBackground(event.thumbnail)
+                        "
+                      ></div>
+                      <div class="text d-flex">
+                        <div class="one-half">
+                          <h3>{{ event.title }}</h3>
+                          <p>
+                            <span>{{ event.purpose }}</span>
+                          </p>
+                        </div>
+                        <div class="one-forth">
+                          <span class="price">{{ event.groupSize }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+              -->
+            </div>
+          </div>
+
+          <div class="col-sm-12 pt-4 text-center ftco-animate">
+            <h4>Our Promise</h4>
+            <p>
+              Event Planning NW is committed to offering services regardless of nationality, ethnicity, racial origin, sexual orientation, biological sex, gender identity or expression, religious affiliation or lack thereof, age, or ability. 
+              Event Planning NW supports marriage equality and is a member of the Oregon United For Marriage Coalition of Wedding Professionals.
+            </p>
+
+            <!--
+            <span
+              ><a
+                href="/request"
+                routerLink="/request"
+                class="btn btn-primary btn-outline-primary p-3"
+                >Request event assistance</a
+              ></span
+            >
+            -->
+            <button href="/request" routerLink="/request" class="btn-success">Request Event Assistance</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

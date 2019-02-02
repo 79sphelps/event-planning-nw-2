@@ -1,0 +1,137 @@
+<section class="home-slider owl-carousel">
+  <div
+    class="slider-item"
+    style="background-image: url('../../assets/images/skyline.png');"
+    data-stellar-background-ratio="0.5"
+  >
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row slider-text align-items-center justify-content-center">
+        <div class="col-md-10 col-sm-12 ftco-animate text-center">
+          <p class="breadcrumbs">
+            <span class="mr-2"><a href="/" routerLink="/">Home</a></span>
+            <span>About</span>
+          </p>
+          <h1 class="mb-3">About Us</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 
+<section class="ftco-section-2">
+  <div class="container d-flex">
+    <div class="section-2-blocks-wrapper row">
+      <div class="img col-sm-12 col-lg-6" style="background-image: url('../assets/images/photo-9.jpg');">
+      </div>
+      <div class="text col-lg-6 ftco-animate">
+        <div class="text-inner align-self-start">
+          <span class="subheading">Event Planning NW</span>
+          <h3 class="heading">About Us</h3>
+          <p>{{ homepage && homepage.aboutMsg }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<div class="container-fluid myphoto-section bg-myphoto-dark" id="about">
+  <div class="container">
+    <div class="row ftco-animate" style="margin-left: 0px; margin-right: 0px;">
+      <h3>About Us</h3>
+      <div class="card bg-myphoto-light">
+        <div class="card-block" style="padding: 20px;">
+          <p [innerHTML]="homepage && homepage.aboutMsg"></p>
+
+          <blockquote class="blockquote">
+            <p>{{ homepage && homepage.personHighlightQuote }}</p>
+            <footer class="blockquote-footer">
+              {{ homepage && homepage.personHighlight }},
+              <cite>Event Planning NW</cite>
+            </footer>
+          </blockquote>
+
+          <!--
+            <div class="media">
+              <div class="col-sm-12 media-left">
+                <figure class="col-sm-12 figure">
+                  
+                  <img
+                    [src]="my_image"
+                    style="width: 300px; height: auto; padding: 20px;"
+                    class="figure-img"
+                  />
+                  
+                  <figcaption class="figure-caption">
+                    {{ homepage && homepage.personHighlightThumbnailCaption }}
+                  </figcaption>
+                
+                </figure>
+              </div>
+
+              <div class="col-sm-12 media-body">
+                <h4 class="media-heading">
+                  {{ homepage && homepage.personHighlight }}
+                </h4>
+                {{ homepage && homepage.personHighlightBio }}
+              </div>
+            </div>
+            -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-5">
+      <div class="col-md-7 text-center heading-section ftco-animate">
+        <span class="subheading">Our Staff</span>
+        <h2>Staff Members</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 ftco-animate">
+        <div class="block-10">
+          <div class="person-info">
+            <span class="name">Rachel Phelps</span>
+            <span class="position">Founder</span>
+          </div>
+          <div
+            class="chef-img"
+            style="background-image: url(../assets/images/person_1.jpg)"
+          ></div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="block-10">
+          <div class="person-info">
+            <span class="name">Personnel 2</span>
+            <span class="position">Contract Onsite Coordinator</span>
+          </div>
+          <div
+            class="chef-img"
+            style="background-image: url(../assets/images/person_2.jpg)"
+          ></div>
+        </div>
+      </div>
+      <div class="col-md-4 ftco-animate">
+        <div class="block-10">
+          <div class="person-info">
+            <span class="name">Personnel 3</span>
+            <span class="position">Role</span>
+          </div>
+          <div
+            class="chef-img"
+            style="background-image: url(../assets/images/person_3.jpg)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-gallery></app-gallery>

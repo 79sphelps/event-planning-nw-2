@@ -1,0 +1,56 @@
+<!-- <div hidden>{{ eventList && eventList.length }}</div> -->
+
+<section class="home-slider owl-carousel">
+    <div
+      class="slider-item"
+      style="background-image: url('../../../assets/images/skyline.png');"
+      data-stellar-background-ratio="0.5"
+    >
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-md-10 col-sm-12 ftco-animate text-center">
+            <p class="breadcrumbs">
+              <span class="mr-2"><a href="/" routerLink="/">Home</a></span>
+              <span>Service</span>
+            </p>
+            <h1 class="mb-3">Service</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="container">
+  <!-- <div class="row" style="margin-left: 0px; margin-right: 0px;"> -->
+  <div style="margin-left: 0px; margin-right: 0px;">
+    <app-loading *ngIf="loading"></app-loading>
+
+    <ng-template [ngIf]="utils.isLoaded(loading)">
+      <h1 class="text-center">{{ pageTitle }}</h1>
+      <!-- Service -->
+      <ng-template [ngIf]="service">
+
+        <div class="card">
+          <!-- Service tab navigation -->
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="[]" [queryParams]="{ tab: 'details' }" [ngClass]="{ 'active': utils.tabIs(tab, 'details') }">Details</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service detail tab -->
+          <app-service-detail *ngIf="utils.tabIs(tab, 'details')" [service]="service"></app-service-detail>
+
+        </div>
+      </ng-template>
+
+      <!-- Error loading events -->
+      <p *ngIf="error" class="alert alert-danger">
+        <strong>Oops!</strong> There was an error retrieving information for this service.
+      </p>
+    </ng-template>
+  </div>
+</div>

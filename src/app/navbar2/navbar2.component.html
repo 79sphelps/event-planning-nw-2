@@ -1,0 +1,111 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> -->
+<nav class="navbar navbar-expand-custom sticky-top navbar-dark bg-dark" appClickOutside [navbarOpen]="navbarOpen" (clickOutside)="toggleNavbar()">
+  <a class="navbar-brand" href="#">
+    Event Planning NW
+  </a>
+
+  <!--
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  -->
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#ftco-nav"
+    aria-controls="ftco-nav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    (click)="toggleNavbar()"
+  >
+    <span class="oi oi-menu"></span> Menu
+  </button>
+
+
+  <div class="collapse navbar-collapse navbar-ex1-collapse" [ngClass]="{ 'show': navbarOpen }">
+    <div class="header-page-authStatus">
+      <span *ngIf="auth.loggingIn">Logging in...</span>
+      <ng-template [ngIf]="!auth.loggingIn">
+        <a *ngIf="!auth.loggedIn" (click)="auth.login()" class="login">Log In </a>
+        <span *ngIf="auth.loggedIn && auth.userProfile" class="login">
+          {{ auth.userProfile.name }} <span class="divider"> | </span>
+          <a (click)="auth.logout()" class="login">Log Out </a>
+        </span>
+      </ng-template>
+    </div>
+
+    <!--
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Item 1</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Item 2</a>
+      </li>
+    </ul>
+    -->
+    <ul class="navbar-nav ml-auto">
+    
+      <li (click)="onMenuClick()" [class]="getActiveStatus('/')">
+        <a href="/" routerLink="/"  class="nav-link">Home</a>
+      </li>
+
+      <li (click)="onMenuClick()" *ngIf="!auth.loggedIn && !auth.isAdmin" [class]="getActiveStatus('/events')">
+        <a href="/events" routerLink="/events" routerLinkActive="active" class="nav-link">Events</a>
+      </li>
+      <li (click)="onMenuClick()" *ngIf="!auth.loggedIn && !auth.isAdmin" [class]="getActiveStatus('/services')">
+        <a href="/services" routerLink="/services" routerLinkActive="active" class="nav-link">Services</a>
+      </li>
+      <li (click)="onMenuClick()" *ngIf="!auth.loggedIn && !auth.isAdmin" [class]="getActiveStatus('/request')">
+        <a href="/request" routerLink="/request" routerLinkActive="active" class="nav-link">Request</a>
+      </li>
+      <!--
+      <li *ngIf="!auth.loggedIn && !auth.isAdmin" [class]="getActiveStatus('/blog')">
+        <a href="/blog" routerLink="/blog" class="nav-link">Blog</a>
+      </li>
+      -->
+      <li (click)="onMenuClick()" *ngIf="!auth.loggedIn && !auth.isAdmin" [class]="getActiveStatus('/about')">
+        <a href="/about" routerLink="/about" routerLinkActive="active" class="nav-link">About</a>
+      </li>
+      <li (click)="onMenuClick()" *ngIf="!auth.loggedIn && !auth.isAdmin" [class]="getActiveStatus('/contact')">
+        <a href="/contact" routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
+      </li>
+
+      <li (click)="onMenuClick()" *ngIf="auth.loggedIn && auth.isAdmin" [class]="getActiveStatus('/admin')">
+        <a href="/admin" routerLink="/admin" routerLinkActive="active" class="nav-link">Events</a>
+      </li>
+
+      <li (click)="onMenuClick()" *ngIf="auth.loggedIn && auth.isAdmin" [class]="getActiveStatus('/admin/services')">
+        <a href="/admin/services" routerLink="/admin/services" routerLinkActive="active" class="nav-link">Services</a>
+      </li>      
+
+      <li (click)="onMenuClick()" *ngIf="auth.loggedIn && auth.isAdmin" [class]="getActiveStatus('/admin/event/new')">
+        <a href="/admin/event/new" routerLink="/admin/event/new" routerLinkActive="active" class="nav-link">Create Event</a>
+      </li>
+
+      <li (click)="onMenuClick()" *ngIf="auth.loggedIn && auth.isAdmin" [class]="getActiveStatus('/admin/homepage')">
+        <a href="/admin/homepage" routerLink="/admin/homepage" routerLinkActive="active" class="nav-link">Homepage</a>
+      </li>
+
+      <li (click)="onMenuClick()" *ngIf="auth.loggedIn && auth.isAdmin" [class]="getActiveStatus('/admin/images')">
+        <a href="/admin/images" routerLink="/admin/images" routerLinkActive="active" class="nav-link">Images</a>
+      </li>
+
+      <!--
+
+      <li (click)="onMenuClick()" *ngIf="auth.loggedIn && auth.isAdmin" [class]="getActiveStatus('/admin/requests')">
+        <a href="/admin/requests" routerLink="/admin/requests" routerLinkActive="active" class="nav-link">Requests</a>
+      </li>        
+
+      <li (click)="onMenuClick()" *ngIf="auth.loggedIn && auth.isAdmin" [class]="getActiveStatus('/admin/testimonials')">
+        <a href="/admin/testimonials" routerLink="/admin/testimonials" routerLinkActive="active" class="nav-link">Testimonials</a>
+      </li>  
+      -->       
+    </ul>
+
+
+  </div>
+</nav>

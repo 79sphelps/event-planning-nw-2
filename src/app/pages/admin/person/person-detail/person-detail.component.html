@@ -1,0 +1,44 @@
+<!-- <div hidden>{{ eventList && eventList.length }}</div> -->
+
+<section class="home-slider owl-carousel">
+    <div
+      class="slider-item"
+      style="background-image: url('../../../assets/images/skyline.png');"
+      data-stellar-background-ratio="0.5"
+    >
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-md-10 col-sm-12 ftco-animate text-center">
+            <p class="breadcrumbs">
+              <span class="mr-2"><a href="/" routerLink="/">Home</a></span>
+              <span>Staff Member Detail</span>
+            </p>
+            <h1 class="mb-3">Staff Member Detail</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="card-body" style="padding: 10px;">
+  <h2 class="card-title text-center mb-0">Person Details</h2>
+</div>
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <strong>Person Name:</strong>{{ person.name }}
+  </li>
+
+  <li class="list-group-item">
+    <strong>Person Role:</strong>{{ person.role }}
+  </li>
+</ul>
+<!--
+<div class="card-body" *ngIf="image.description" style="padding: 10px;">
+  <p class="card-text lead" [innerHTML]="image.description"></p>
+</div>
+-->
+<div *ngIf="auth.isAdmin" class="card-footer text-right small">
+  <a [routerLink]="['/admin/personel/update', person._id]">Edit</a>
+</div>

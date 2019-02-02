@@ -1,0 +1,89 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "event-planning-nw"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "assets/images",
+        "favicon.ico",
+        "../bower_components/components-font-awesome/webfonts"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "assets/css/open-iconic-bootstrap.min.css",
+        "assets/css/animate.css",
+        "assets/css/owl.carousel.min.css",
+        "assets/css/owl.theme.default.min.css",
+        "assets/css/magnific-popup.css",
+        "assets/css/aos.css",
+        "assets/css/ionicons.min.css",
+        "assets/css/bootstrap-datepicker.css",
+        "assets/css/jquery.timepicker.css",
+        "assets/css/flaticon.css",
+        "assets/css/icomoon.css",
+        "assets/css/style.css",
+        "../node_modules/font-awesome/css/font-awesome.css"
+      ],
+      "scripts": [
+        "assets/js/jquery.min.js",
+        "assets/js/jquery-migrate-3.0.1.min.js",
+        "assets/js/popper.min.js",
+        "assets/js/bootstrap.min.js",
+        "assets/js/jquery.easing.1.3.js",
+        "assets/js/jquery.waypoints.min.js",
+        "assets/js/jquery.stellar.min.js",
+        "assets/js/owl.carousel.min.js",
+        "assets/js/jquery.magnific-popup.min.js",
+        "assets/js/aos.js",
+        "assets/js/jquery.animateNumber.min.js",
+        "assets/js/bootstrap-datepicker.js",
+        "assets/js/jquery.timepicker.min.js",
+        "assets/js/main.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "scss",
+    "component": {}
+  }
+}

@@ -1,0 +1,8 @@
+
+<app-events-header (viewLoaded)="setDisplayEventsStatus($event)"></app-events-header>
+
+<app-loading *ngIf="loading"></app-loading>
+
+<div *ngIf="utils.isLoaded(loading)">
+    <app-events-content *ngIf="displayEventsStatus"></app-events-content>
+</div>

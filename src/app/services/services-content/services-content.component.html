@@ -1,0 +1,270 @@
+<section class="ftco-section bg-light">
+  <div class="container">
+  
+    <div class="ftco-animate">
+      <h3>OUR PHILOSOPHY</h3>
+      <p>Every event we coordinate and produce is a team collaboration. We begin with getting to know your 
+        objectives for why you are hosting an event and then we strategically work to build you a plan that 
+        will provide you with the support needed to create and produce experiences that engage your audience 
+        and motivate them to take action.  
+    </div>
+
+    <div class="ftco-animate">
+      <p>
+      WHY WORK WITH US? Everything we do we believe in challenging the status quo of our industry, the way 
+      we challenge the status quo is we never duplicate events, seek authenticity in every detail, hire the 
+      most passionate people and welcome high expectations; LISTEN, ANTICIPATE, EXECUTE & OVER DELIVER. 
+      It's a system we own and take pride in, and it ensures every event we design, style, coordinate or 
+      produce will be an authentic success. We work this way because we expect the same from ourselves, our 
+      partners, and every vendor we work with.  
+    </div>
+
+    <div class="ftco-animate">
+      <p>
+      OUR OBJECTIVE: Complete commitment to your experience (pre-, during and post event) and vigilant 
+      attention to detail in every aspect of your production process.  
+      
+      <p>
+      WE BELIEVE: Every event is a marketing opportunity. We consider every aspect of your audiences' 
+      experience as the keys to the success of your event, and we look to protect that at every point of 
+      contact. 
+      
+      <p>
+      WHAT YOU’LL GET: A team oriented delivery of brand strategy coupled with creative design, professional 
+      execution and post-event ROI measurement that results in success.
+    </div>
+
+    <div class="ftco-animate">
+      <h3>FUNDRAISING</h3>
+      <p>Perhaps the best way for an association or organization to boost membership and raise company 
+        awareness is by hosting a fundraiser. Sounds fun but not an easy task. Fundraisers are full of 
+        details that only a professional is expected to know how to manage.
+      
+      <p>Sometimes business as usual doesn't allow time to plan your own fundraiser but business as usual 
+        wouldn't be if it weren't for the funds you need to raise. It is not expected for you to know how 
+        to manage a golf tournament, auctions or industry related competitions. Not to worry because we do 
+        and have planned many. We have become masters at managing the bottom line while exceeding 
+        expectations of the overall experience.
+      
+      <p>Need an idea? Not sure what fundraiser is right for your company to employ? We have many resources 
+        and ideas to help you make the perfect decision.
+    </div>
+
+    <div class="ftco-animate">
+      <h3>Non Profit & Fundraising Event Services</h3>
+      
+      <ul>
+      <li>Identify Sponsorship Categories and targeted goals</li>
+      <li>Creation of business development plan</li>
+      <li>Marketing plan and budget creation</li>
+      <li>Communications and strategic brand management</li>
+      <li>Fundraiser ideas and implementation</li>
+      <li>On-site management</li>
+      <li>Concept, theme and design development</li>
+      <li>Audio visual and electrical consulting</li>
+      <li>Entertainment and VIP guest concierge</li>
+      </ul>
+
+      <p>*Minimum fees apply, contact us to set up a time to meet and discuss your event.
+       
+      <p>"The professionalism that radiates from Event Planning NW the minute you meet this management 
+        team is so impressive that we wondered how we could incorporate them into all of our events." -Michelle 
+        Cornett, Excel Garden
+    </div>
+
+    <div class="ftco-animate">
+      <h3>CONSULTING</h3>
+      <p>Whether your event is for 20 or 3000, a multi-day convention or a half day conference, tradeshow or 
+        in-service day can be there from beginning to end to make your event the talk of your industry. 
+        With years of corporate and restaurant event management experience it is second nature for us to work 
+        with chefs, restaurateurs, wineries, VIP clients, board members, out of town colleagues and traveling 
+        guests.
+      
+      <p>From industry award galas and industry trade shows to in house catering and event sales we'll manage 
+        your events for you and with you, working within your budget, and always bring something fresh to the 
+        table that highlights your company values.
+    </div>
+
+    <div class="ftco-animate">
+      <p>Corporate & Hospitality Event Services include but are not limited to:
+      <ul>
+        <li>Marketing plan and budget creation and management</li>
+        <li>Sponsorship and Business Development Plans</li>
+        <li>Communications and strategic brand management</li>
+        <li>Venue ideas and selection</li>
+        <li>On-site management</li>
+        <li>Event sales and prospecting</li>
+        <li>Event staff training</li>
+        <li>Concept, theme and design development</li>
+        <li>Audio visual and electrical consulting</li>
+        <li>Entertainment and VIP guest concierge</li>
+      </ul>
+    </div>
+
+    <div class="ftco-animate">
+      <p>Event Production Services For:
+      <ul>
+        <li>Conventions and Annual Meetings</li>
+        <li>Independent Restaurants</li>
+        <li>Boutique Hotels</li>
+        <li>Conferences</li>
+        <li>Sponsor Appreciation</li>
+        <li>VIP Dinners and Welcoming Events</li>
+        <li>Group/Department Meetings, Retreats and Team Building</li>
+        <li>Product Launch</li>
+        <li>Grand Openings</li>
+        <li>Award Galas</li>
+        <li>Industry Recognition</li>
+        <li>Employee Recognition</li>
+        <li>Company Picnics</li>
+      </ul>
+    </div>
+  
+ 
+    <div class="row no-gutters justify-content-center mb-5 pb-5">
+      <div class="col-md-7 text-center heading-section ftco-animate">
+        <h2>Our Most Popular Services</h2>
+      </div>
+    </div>
+
+    <div class="row d-flex no-gutters">
+      <!-- 
+          <div *ngFor="let item of list; let i = index;">
+            <div *ngIf="item == list[i-1]"></div>
+            <div *ngIf="item == list[0]"></div>
+          </div>
+        -->
+
+      <div *ngFor="let service of servicesList; let i = index">
+        <div class="col-lg-12">
+          <div *ngIf="i % 2 === 0">
+            <div class="block-3 d-md-flex ftco-animate2">
+              <div
+                class="image order-last"
+                [style.background-image]="getBackground(service.thumbnail)"
+              ></div>
+              <div class="text text-center order-first">
+                <h2 class="heading">{{ service.title }}</h2>
+                <p>{{ service.description }}</p>
+                <span class="price">Pricing Based to Services Provied</span>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="i % 2 !== 0">
+            <div class="block-3 d-md-flex ftco-animate2">
+              <div
+                class="image order-first"
+                [style.background-image]="getBackground(service.thumbnail)"
+              ></div>
+              <div class="text text-center order-first">
+                <h2 class="heading">{{ service.title }}</h2>
+                <p>{{ service.description }}</p>
+                <span class="price">Pricing Based to Services Provied</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--    
+        <div class="col-lg-6">
+          <div class="block-3 d-md-flex ftco-animate">
+            <div class="image order-last" style="background-image: url(../assets/images/photo-3.jpg);"></div>
+            <div class="text text-center order-first">
+              <h2 class="heading">Service</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <span class="price">from $1.00</span>
+            </div>
+          </div>
+          <div class="block-3 d-md-flex ftco-animate">
+            <div class="image order-first" style="background-image: url(../assets/images/photo-4.jpg);"></div>
+            <div class="text text-center order-first">
+              <h2 class="heading">Service</h2>
+              <p>Lorem ipsum dolor sit amet.</p>
+              <span class="price">from $1.00</span>
+            </div>
+          </div>
+        </div>
+  
+  
+        <div class="col-lg-6">
+          <div class="block-3 d-md-flex ftco-animate">
+            <div class="image order-last" style="background-image: url(../assets/images/photo-5.jpg);"></div>
+            <div class="text text-center order-first">
+              <h2 class="heading">Service</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <span class="price">from $1.00</span>
+            </div>
+          </div>
+          <div class="block-3 d-md-flex ftco-animate">
+            <div class="image order-first" style="background-image: url(../assets/images/photo-6.jpg);"></div>
+            <div class="text text-center order-first">
+              <h2 class="heading">Service</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <span class="price">from $1.00</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-6">
+          <div class="block-3 d-md-flex ftco-animate">
+            <div class="image order-last" style="background-image: url(../assets/images/photo-7.jpg);"></div>
+            <div class="text text-center order-first">
+              <h2 class="heading">Service</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <span class="price">from $1.00</span>
+            </div>
+          </div>
+          <div class="block-3 d-md-flex ftco-animate">
+            <div class="image order-first" style="background-image: url(../assets/images/photo-8.jpg);"></div>
+            <div class="text text-center order-first">
+              <h2 class="heading">Service</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <span class="price">from $1.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="block-3 d-md-flex ftco-animate">
+            <div class="image order-last" style="background-image: url(../assets/images/photo-9.jpg);"></div>
+            <div class="text text-center order-first">
+              <h2 class="heading">Service</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <span class="price">from $1.00</span>
+            </div>
+          </div>
+          <div class="block-3 d-md-flex ftco-animate">
+            <div class="image order-first" style="background-image: url(../assets/images/photo-1.jpg);"></div>
+            <div class="text text-center order-first">
+              <h2 class="heading">Service</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <span class="price">from $1.00</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-6">
+          <div class="block-3 d-md-flex ftco-animate">
+            <div class="image order-last" style="background-image: url(../assets/images/photo-2.jpg);"></div>
+            <div class="text text-center order-first">
+              <h2 class="heading">Service</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <span class="price">from $1.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="block-3 d-md-flex ftco-animate">
+            <div class="image order-last" style="background-image: url(../assets/images/photo-3.jpg);"></div>
+            <div class="text text-center order-first">
+              <h2 class="heading">Service</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <span class="price">from $1.00</span>
+            </div>
+          </div>
+        </div>
+        -->
+    </div>
+  </div>
+</section>

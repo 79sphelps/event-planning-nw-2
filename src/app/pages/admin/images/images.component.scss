@@ -1,0 +1,148 @@
+
+/*!
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+ .fa {
+    font: 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @-webkit-keyframes fa-spin {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+    }
+  }
+  @keyframes fa-spin {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+    }
+  }
+  .fa-times:before {
+    content: "\f00d";
+  }
+  .fa-image:before {
+    content: "\f03e";
+  }
+  .fa-edit:before {
+    content: "\f044";
+  }
+  .fa-warning:before {
+    content: "\f071";
+  }
+  .fa-calendar:before {
+    content: "\f073";
+  }
+  .fa-group:before {
+    content: "\f0c0";
+  }
+  .fa-fa:before {
+    content: "\f2b4";
+  } 
+  
+  .fa-search:before {
+    content: "\f002";
+  }
+  
+  
+  
+  .form-control-sm,
+  .input-group-sm > .form-control,
+  .input-group-sm > .input-group-addon,
+  .input-group-sm > .input-group-btn > .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .form-text {
+    display: block;
+    margin-top: 0.25rem;
+  }
+  .form-control-danger,
+  .form-control-success,
+  .form-control-warning {
+    padding-right: 2.25rem;
+    background-repeat: no-repeat;
+    background-position: center right 0.625rem;
+    background-size: 1.25rem 1.25rem;
+  }
+  
+  
+  .input-group .form-control,
+  .input-group-addon,
+  .input-group-btn {
+    display: table-cell;
+  }
+  .input-group .form-control:not(:first-child):not(:last-child),
+  .input-group-addon:not(:first-child):not(:last-child),
+  .input-group-btn:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+  .input-group-addon,
+  .input-group-btn {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  .input-group-addon {
+    padding: 0.5rem 1.0rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #55595c;
+    text-align: center;
+    background-color: #eceeef;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+  }
+  .input-group-addon.form-control-sm,
+  .input-group-sm > .input-group-addon,
+  .input-group-sm > .input-group-btn > .input-group-addon.btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem;
+  }
+  .input-group-addon input[type="checkbox"],
+  .input-group-addon input[type="radio"] {
+    margin-top: 0;
+  }
+  .input-group .form-control:not(:last-child),
+  .input-group-addon:not(:last-child),
+  .input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn,
+  .input-group-btn:not(:last-child) > .btn,
+  .input-group-btn:not(:last-child) > .btn-group > .btn {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .input-group-addon:not(:last-child) {
+    border-right: 0;
+  }
+  .input-group .form-control:not(:first-child),
+  .input-group-addon:not(:first-child),
+  .input-group-btn:not(:first-child) > .btn,
+  .input-group-btn:not(:first-child) > .btn-group > .btn,
+  .input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn,
+  .input-group-btn:not(:last-child) > .btn:not(:first-child) {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .form-control + .input-group-addon:not(:first-child) {
+    border-left: 0;
+  }
+  
