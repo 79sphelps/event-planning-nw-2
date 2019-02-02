@@ -14,7 +14,7 @@ import { Component } from "@angular/core";
       img {
         display: block;
         margin: 20px auto;
-        width: 50px;
+        width: 150px;
       }
     `
   ]
