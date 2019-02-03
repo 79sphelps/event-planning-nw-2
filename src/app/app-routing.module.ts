@@ -4,23 +4,23 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 // import { ModuleWithProviders } from '@angular/core/src/metadata/ng_module';
 
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { BlogComponent } from './blog/blog.component';
-import { ContactComponent } from './contact/contact.component';
-import { ServicesComponent } from './services/services.component';
-import { EventsComponent } from './events/events.component';
-import { RequestComponent } from './request/request.component';
-import { BlogEntryComponent } from './blog-entry/blog-entry.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { EventsComponent } from './pages/events/events.component';
+import { RequestComponent } from './pages/request/request.component';
+import { BlogEntryComponent } from './pages/blog/blog-entry/blog-entry.component';
 
 import { CallbackComponent } from './pages/callback/callback.component';
-import { CustomServicesComponent } from './pages/custom-services/custom-services.component';
+// import { CustomServicesComponent } from './pages/custom-services/custom-services.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminGuard } from './auth/admin.guard';
 
 import { AdminComponent } from './pages/admin/admin.component';
 
-import { EventComponent } from './pages/event/event.component';
+// import { EventComponent } from './pages/event/event.component';
 import { CreateEventComponent } from './pages/admin/create-event/create-event.component';
 import { UpdateEventComponent } from './pages/admin/update-event/update-event.component';
 
@@ -77,18 +77,16 @@ const routes: Routes = [
     path: 'request',
     component: RequestComponent
   },
+  /*
   {
     path: 'event/:id',
     component: EventComponent,
     canActivate: [AuthGuard]
   },
+  */
   {
     path: 'callback',
     component: CallbackComponent
-  },
-  {
-    path: 'custom-services',
-    component: CustomServicesComponent
   },
   {
     path: 'admin',

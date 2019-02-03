@@ -1,25 +1,26 @@
+
 <!-- <div hidden>{{ eventList && eventList.length }}</div> -->
 
 <section class="home-slider owl-carousel">
-    <div
-      class="slider-item"
-      style="background-image: url('../../../assets/images/skyline.png');"
-      data-stellar-background-ratio="0.5"
-    >
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row slider-text align-items-center justify-content-center">
-          <div class="col-md-10 col-sm-12 ftco-animate text-center">
-            <p class="breadcrumbs">
-              <span class="mr-2"><a href="/" routerLink="/">Home</a></span>
-              <span>Delete Image</span>
-            </p>
-            <h1 class="mb-3">Delete Image</h1>
-          </div>
+  <div
+    class="slider-item"
+    style="background-image: url('../../../assets/images/skyline.png');"
+    data-stellar-background-ratio="0.5"
+  >
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row slider-text align-items-center justify-content-center">
+        <div class="col-md-10 col-sm-12 ftco-animate text-center">
+          <p class="breadcrumbs">
+            <span class="mr-2"><a href="/" routerLink="/">Home</a></span>
+            <span>Delete Image</span>
+          </p>
+          <h1 class="mb-3">Delete Image</h1>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 <p class="lead">
   You are deleting the "
@@ -32,16 +33,28 @@
 
 <div class="form-group">
   <label for="deleteImage">Confirm image caption:</label>
-  <input type="text" id="deleteImage" class="form-control" [(ngModel)]="confirmDelete">
+  <input
+    type="text"
+    id="deleteImage"
+    class="form-control"
+    [(ngModel)]="confirmDelete"
+  />
 </div>
 
 <!-- Delete button -->
 <p>
-  <button class="btn btn-danger" (click)="removeEvent()" [disabled]="confirmDelete !== image.caption || submitting">Delete Image</button>
+  <button
+    class="btn btn-danger"
+    (click)="removeEvent()"
+    [disabled]="confirmDelete !== image.caption || submitting"
+  >
+    Delete Image
+  </button>
   <app-submitting *ngIf="submitting"></app-submitting>
 </p>
 
 <!-- Error deleting image -->
 <p *ngIf="error" class="alert alert-danger">
-  <strong>Oops!</strong> There was an error deleting this image. Please try again.
+  <strong>Oops!</strong> There was an error deleting this image. Please try
+  again.
 </p>

@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Event Module
-import { EventModule } from './pages/event/event.module';
+// import { EventModule } from './pages/event/event.module';
 
 // Admin Module
 import { AdminModule } from './pages/admin/admin.module';
@@ -21,38 +21,38 @@ import { CoreModule } from './core/core.module';
 
 // Components
 import { CallbackComponent } from './pages/callback/callback.component';
-import { CustomServicesComponent } from './pages/custom-services/custom-services.component';
-import { PaginationComponent } from './pagination/pagination.component';
+// import { CustomServicesComponent } from './pages/custom-services/custom-services.component';
+// import { PaginationComponent } from './pagination/pagination.component';
 
 import { RootComponent } from './root/root.component';
 // import { NavbarComponent } from './navbar/navbar.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
-import { HomeSliderComponent } from './home-slider/home-slider.component';
-import { BlogComponent } from './blog/blog.component';
-import { ServicesComponent } from './services/services.component';
-import { EventsComponent } from './events/events.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { RequestComponent } from './request/request.component';
-import { BlogSliderComponent } from './home/blog-slider/blog-slider.component';
-import { GalleryComponent } from './home/gallery/gallery.component';
-import { BlogEntryComponent } from './blog-entry/blog-entry.component';
-import { ServicesContentComponent } from './services/services-content/services-content.component';
-import { ServicesHeaderComponent } from './services/services-header/services-header.component';
-import { EventsHeaderComponent } from './events/events-header/events-header.component';
-import { EventsContentComponent } from './events/events-content/events-content.component';
+import { HomeSliderComponent } from './pages/home-slider/home-slider.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { EventsComponent } from './pages/events/events.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { RequestComponent } from './pages/request/request.component';
+import { BlogSliderComponent } from './pages/home/blog-slider/blog-slider.component';
+import { GalleryComponent } from './pages/home/gallery/gallery.component';
+import { BlogEntryComponent } from './pages/blog/blog-entry/blog-entry.component';
+import { ServicesContentComponent } from './pages/services/services-content/services-content.component';
+import { ServicesHeaderComponent } from './pages/services/services-header/services-header.component';
+import { EventsHeaderComponent } from './pages/events/events-header/events-header.component';
+import { EventsContentComponent } from './pages/events/events-content/events-content.component';
 // import { FooterComponent } from './footer/footer.component';
 
-import { HomeComponent } from './home/home.component';
-import { BookingComponentComponent } from './home/booking-component/booking-component.component';
-import { TwoColSectionComponent } from './home/two-col-section/two-col-section.component';
-import { EventsSectionComponent } from './home/events-section/events.section.component';
-import { ServicesSectionComponent } from './home/services-section/services.section.component';
-import { SliderComponent } from './home/slider/slider.component';
-import { AboutSectionComponent } from './home/about-section/about.section.component';
+import { HomeComponent } from './pages/home/home.component';
+import { BookingComponentComponent } from './pages/home/booking-component/booking-component.component';
+import { TwoColSectionComponent } from './pages/home/two-col-section/two-col-section.component';
+import { EventsSectionComponent } from './pages/home/events-section/events.section.component';
+import { ServicesSectionComponent } from './pages/home/services-section/services.section.component';
+import { SliderComponent } from './pages/home/slider/slider.component';
+import { AboutSectionComponent } from './pages/home/about-section/about.section.component';
 
 // Services
-import { PaginationService } from './pagination/pagination.service';
+// import { PaginationService } from './pagination/pagination.service';
 import { FooterService } from './footer/footer.service';
 import { ClickOutsideDirective } from './navbar2/click-outside.directive';
 
@@ -77,8 +77,6 @@ import { ClickOutsideDirective } from './navbar2/click-outside.directive';
     GalleryComponent,
     BlogEntryComponent,
     CallbackComponent,
-    CustomServicesComponent,
-    PaginationComponent,
     ServicesContentComponent,
     ServicesHeaderComponent,
     EventsHeaderComponent,
@@ -95,10 +93,9 @@ import { ClickOutsideDirective } from './navbar2/click-outside.directive';
     BrowserAnimationsModule,
     AuthModule.forRoot(),
     CoreModule.forRoot(),
-    EventModule,
     AdminModule
   ],
-  providers: [Title, PaginationService, FooterService],
+  providers: [Title, FooterService],
   bootstrap: [RootComponent]
 })
 export class AppModule {}

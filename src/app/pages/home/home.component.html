@@ -1,0 +1,29 @@
+<!--
+<app-home-slider (viewLoaded)="setAboutSectionStatus($event)"></app-home-slider>
+
+<app-booking-component></app-booking-component>
+
+<app-about-section *ngIf="displayAboutSection" (viewLoaded)="setProductsSectionStatus($event)"></app-about-section>
+
+<app-products-section *ngIf="displayProductsSection" (viewLoaded)="setServicesSectionStatus($event)"></app-products-section>
+
+<app-services-section *ngIf="displayServicesSection" (viewLoaded)="setSliderSectionStatus($event)"></app-services-section>
+
+<app-slider *ngIf="displaySliderSection" (viewLoaded)="setBlogSliderSectionStatus($event)"></app-slider>
+
+<app-blog-slider *ngIf="displayBlogSliderSection" (viewLoaded)="setGallerySectionStatus($event)"></app-blog-slider>
+
+<app-gallery *ngIf="displayGallerySection"></app-gallery>
+-->
+
+<app-home-slider (viewLoaded)="setAboutSectionStatus($event)" ></app-home-slider>
+
+<app-about-section *ngIf="displayAboutSection" (viewLoaded)="setEventsSectionStatus($event)"></app-about-section>
+
+<app-events-section *ngIf="displayEventsSection" (viewLoaded)="setServicesSectionStatus($event)"></app-events-section>
+
+<app-services-section *ngIf="displayServicesSection" (viewLoaded)="setBlogSliderSectionStatus($event)"></app-services-section>
+
+<app-blog-slider *ngIf="displayBlogSliderSection" (viewLoaded)="setGallerySectionStatus($event)"></app-blog-slider>
+
+<app-gallery *ngIf="displayGallerySection"></app-gallery>
