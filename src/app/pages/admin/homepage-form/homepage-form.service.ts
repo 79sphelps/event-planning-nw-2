@@ -1,15 +1,15 @@
-import { Injectable } from "@angular/core";
-// import { SubmittingComponent } from "../../../core/forms/submitting.component";
+import { Injectable } from '@angular/core';
+// import { SubmittingComponent } from '../../../core/forms/submitting.component';
 
 @Injectable()
 export class HomepageFormService {
   validationMessages: any;
   // Set up errors object
   formErrors = {
-    title: "",
-    location: "",
-    viewPublic: "",
-    description: ""
+    title: '',
+    location: '',
+    viewPublic: '',
+    description: ''
   };
 
   // Min/maxlength validation

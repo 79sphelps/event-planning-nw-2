@@ -10,15 +10,15 @@ export class RootComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.loadStyle("../../assets/css/animate.css");
-    this.loadStyle("../../assets/css/style.css");
-    this.loadScript("../../assets/js/main.js");
+    this.loadStyle('../../assets/css/animate.css');
+    this.loadStyle('../../assets/css/style.css');
+    this.loadScript('../../assets/js/main.js');
   }
 
   public loadScript(url: string) {
     const body = <HTMLDivElement>document.body;
-    const script = document.createElement("script");
-    script.innerHTML = "";
+    const script = document.createElement('script');
+    script.innerHTML = '';
     script.src = url;
     script.async = false;
     script.defer = true;
@@ -28,10 +28,10 @@ export class RootComponent implements OnInit {
   public loadStyle(styl: string) {
     const head = <HTMLHeadElement>document.head;
     const style = document.createElement('link');
-    style.innerHTML = "";
+    style.innerHTML = '';
     style.rel = styl;
-    //style.async = false;
-    //style.defer = true;
+    // style.async = false;
+    // style.defer = true;
     head.appendChild(style);
   }
 

@@ -1,15 +1,15 @@
-import { Injectable } from "@angular/core";
-// import { SubmittingComponent } from "../../../core/forms/submitting.component";
+import { Injectable } from '@angular/core';
+// import { SubmittingComponent } from '../../../core/forms/submitting.component';
 
 @Injectable()
 export class ImagesFormService {
   validationMessages: any;
   // Set up errors object
   formErrors = {
-    caption: "",
-    path: "",
-    editable: "",
-    description: ""
+    caption: '',
+    path: '',
+    editable: '',
+    description: ''
   };
 
   // Min/maxlength validation

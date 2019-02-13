@@ -1,21 +1,21 @@
-import { Component, OnInit, OnDestroy, Input } from "@angular/core";
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
   Validators,
   AbstractControl
-} from "@angular/forms";
-import { Router } from "@angular/router";
-import { Subscription } from "rxjs";
-import { ApiService } from "./../../../core/api.service";
-import { Image } from "./../../../core/models/images.model";
-import { ImagesFormService } from "./images-form.service";
-// import { SubmittingComponent } from "../../../core/forms/submitting.component";
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { ApiService } from './../../../core/api.service';
+import { Image } from './../../../core/models/images.model';
+import { ImagesFormService } from './images-form.service';
+// import { SubmittingComponent } from '../../../core/forms/submitting.component';
 
 @Component({
-  selector: "app-images-form",
-  templateUrl: "./images-form.component.html",
-  styleUrls: ["./images-form.component.scss"],
+  selector: 'app-images-form',
+  templateUrl: './images-form.component.html',
+  styleUrls: ['./images-form.component.scss'],
   providers: [ImagesFormService]
 })
 export class ImagesFormComponent implements OnInit, OnDestroy {
@@ -50,7 +50,7 @@ export class ImagesFormComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.formErrors = this.ef.formErrors;
     this.isEdit = !!this.image;
-    this.submitBtnText = this.isEdit ? "Update Image" : "Create Image";
+    this.submitBtnText = this.isEdit ? 'Update Image' : 'Create Image';
     // Set initial form data
     this.formImage = this._setFormImage();
     // Use FormBuilder to construct the form
@@ -131,7 +131,7 @@ export class ImagesFormComponent implements OnInit, OnDestroy {
         const messages = this.ef.validationMessages[field];
         for (const key in control.errors) {
           if (control.errors.hasOwnProperty(key)) {
-            errorsObj[field] += messages[key] + "<br>";
+            errorsObj[field] += messages[key] + '<br>';
           }
         }
       }
@@ -142,7 +142,7 @@ export class ImagesFormComponent implements OnInit, OnDestroy {
       if (this.formErrors.hasOwnProperty(field)) {
         // Set errors for fields
         // Clear previous error message (if any)
-        this.formErrors[field] = "";
+        this.formErrors[field] = '';
         _setErrMsgs(this.imageForm.get(field), this.formErrors, field);
       }
     }
@@ -150,11 +150,11 @@ export class ImagesFormComponent implements OnInit, OnDestroy {
 
   private _getSubmitObj() {
     return new Image(
-      "",
-      this.imageForm.get("caption").value,
-      this.imageForm.get("path").value,
-      this.imageForm.get("description").value,
-      this.imageForm.get("editable").value
+      '',
+      this.imageForm.get('caption').value,
+      this.imageForm.get('path').value,
+      this.imageForm.get('description').value,
+      this.imageForm.get('editable').value
     );
   }
 
@@ -183,7 +183,7 @@ export class ImagesFormComponent implements OnInit, OnDestroy {
     this.error = false;
     this.submitting = false;
     // Redirect to image detail
-    this.router.navigate(["/admin/images", res._id]);
+    this.router.navigate(['/admin/images', res._id]);
   }
 
   private _handleSubmitError(err) {

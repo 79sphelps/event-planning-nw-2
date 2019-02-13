@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { UtilsService } from '../../core/utils.service';
-//import { FooterService } from '../footer/footer.service';
+// import { FooterService } from '../footer/footer.service';
 
 @Component({
   selector: 'app-services',
@@ -14,9 +14,9 @@ export class ServicesComponent implements OnInit {
 
   constructor(
     public utils: UtilsService,
-    //private _footerService: FooterService
+    // private _footerService: FooterService
     ) {
-    //this._footerService.setLoaded(false);
+    // this._footerService.setLoaded(false);
   }
 
   ngOnInit() {
@@ -30,6 +30,6 @@ export class ServicesComponent implements OnInit {
 
   setDisplayServicesStatus(status: string) {
     this.displayServicesStatus = status;
-    //this._footerService.setLoaded(true);
+    // this._footerService.setLoaded(true);
   }
 }

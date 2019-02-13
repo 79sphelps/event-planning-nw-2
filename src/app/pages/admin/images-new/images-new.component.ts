@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { Title } from "@angular/platform-browser";
+import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
-  selector: "app-images-new",
-  templateUrl: "./images-new.component.html",
-  styleUrls: ["./images-new.component.scss"]
+  selector: 'app-images-new',
+  templateUrl: './images-new.component.html',
+  styleUrls: ['./images-new.component.scss']
 })
 export class ImagesNewComponent implements OnInit {
-  pageTitle = "Add Image";
+  pageTitle = 'Add Image';
 
   constructor(private title: Title) {}
 

@@ -1,8 +1,8 @@
-import { Component, OnDestroy, Input } from "@angular/core";
-import { Service } from "./../../../../core/models/services.model";
-import { Subscription } from "rxjs";
-import { ApiService } from "./../../../../core/api.service";
-import { Router } from "@angular/router";
+import { Component, OnDestroy, Input } from '@angular/core';
+import { Service } from './../../../../core/models/services.model';
+import { Subscription } from 'rxjs/Subscription';
+import { ApiService } from './../../../../core/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-delete-service',
@@ -28,7 +28,7 @@ export class DeleteServiceComponent implements OnDestroy {
         this.error = false;
         console.log(res.message);
         // If successfully deleted event, redirect to Admin
-        this.router.navigate(["/admin/services"]);
+        this.router.navigate(['/admin/services']);
       },
       err => {
         console.error(err);

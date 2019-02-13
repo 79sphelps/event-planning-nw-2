@@ -1,20 +1,20 @@
 // src/app/pages/admin/update-event/update-event.component.ts
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { Title } from "@angular/platform-browser";
-import { AuthService } from "./../../../auth/auth.service";
-import { ApiService } from "./../../../core/api.service";
-import { UtilsService } from "./../../../core/utils.service";
-import { ActivatedRoute } from "@angular/router";
-import { Subscription } from "rxjs";
-import { EventModel } from "./../../../core/models/event.model";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { AuthService } from './../../../auth/auth.service';
+import { ApiService } from './../../../core/api.service';
+import { UtilsService } from './../../../core/utils.service';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { EventModel } from './../../../core/models/event.model';
 
 @Component({
-  selector: "app-update-event",
-  templateUrl: "./update-event.component.html",
-  styleUrls: ["./update-event.component.scss"]
+  selector: 'app-update-event',
+  templateUrl: './update-event.component.html',
+  styleUrls: ['./update-event.component.scss']
 })
 export class UpdateEventComponent implements OnInit, OnDestroy {
-  pageTitle = "Update Event";
+  pageTitle = 'Update Event';
   routeSub: Subscription;
   eventSub: Subscription;
   event: EventModel;
@@ -38,23 +38,23 @@ export class UpdateEventComponent implements OnInit, OnDestroy {
 
     // Set event ID from route params and subscribe
     this.routeSub = this.route.params.subscribe(params => {
-      this._id = params["id"];
+      this._id = params['id'];
       this._getEvent();
     });
 
     // Subscribe to query params to watch for tab changes
     this.tabSub = this.route.queryParams.subscribe(queryParams => {
-      this.tab = queryParams["tab"] || "edit";
+      this.tab = queryParams['tab'] || 'edit';
     });
-    this.loadScript("../../../assets/js/jquery.stellar.min.js");
-    this.loadScript("../../../assets/js/main.js");
+    this.loadScript('../../../assets/js/jquery.stellar.min.js');
+    this.loadScript('../../../assets/js/main.js');
     window.scrollTo({ top: -200, behavior: 'smooth' });
   }
 
   public loadScript(url: string) {
     const body = <HTMLDivElement>document.body;
-    const script = document.createElement("script");
-    script.innerHTML = "";
+    const script = document.createElement('script');
+    script.innerHTML = '';
     script.src = url;
     script.async = false;
     script.defer = true;

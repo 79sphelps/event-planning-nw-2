@@ -1,7 +1,7 @@
-import { Component, Input } from "@angular/core";
-import { AuthService } from "./../../../../auth/auth.service";
-import { UtilsService } from "./../../../../core/utils.service";
-import { Service } from "./../../../../core/models/services.model";
+import { Component, Input } from '@angular/core';
+import { AuthService } from './../../../../auth/auth.service';
+import { UtilsService } from './../../../../core/utils.service';
+import { Service } from './../../../../core/models/services.model';
 
 @Component({
   selector: 'app-service-detail',

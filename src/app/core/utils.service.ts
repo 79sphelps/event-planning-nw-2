@@ -1,5 +1,5 @@
 // src/app/core/utils.service.ts
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class UtilsService {
@@ -17,12 +17,12 @@ export class UtilsService {
   displayCount(guests: number): string {
     // Example usage:
     //  attending this event
-    const persons = guests === 1 ? " person" : " people";
+    const persons = guests === 1 ? ' person' : ' people';
     return guests + persons;
   }
 
   showPlusOnes(guests: number): string {
-    // If bringing additional guest(s), show as "+n"
+    // If bringing additional guest(s), show as '+n'
     if (guests) {
       return `+${guests}`;
     }
@@ -30,7 +30,7 @@ export class UtilsService {
 
   booleanToText(bool: boolean): string {
     // Change a boolean to 'Yes' or 'No' string
-    return bool ? "Yes" : "No";
+    return bool ? 'Yes' : 'No';
   }
 
   capitalize(str: string): string {

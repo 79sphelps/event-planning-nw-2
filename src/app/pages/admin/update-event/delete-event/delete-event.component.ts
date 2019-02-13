@@ -1,14 +1,14 @@
 // src/app/pages/admin/update-event/delete-event/delete-event.component.ts
-import { Component, OnDestroy, Input } from "@angular/core";
-import { EventModel } from "./../../../../core/models/event.model";
-import { Subscription } from "rxjs";
-import { ApiService } from "./../../../../core/api.service";
-import { Router } from "@angular/router";
+import { Component, OnDestroy, Input } from '@angular/core';
+import { EventModel } from './../../../../core/models/event.model';
+import { Subscription } from 'rxjs/Subscription';
+import { ApiService } from './../../../../core/api.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-delete-event",
-  templateUrl: "./delete-event.component.html",
-  styleUrls: ["./delete-event.component.scss"]
+  selector: 'app-delete-event',
+  templateUrl: './delete-event.component.html',
+  styleUrls: ['./delete-event.component.scss']
 })
 export class DeleteEventComponent implements OnDestroy {
   @Input() event: EventModel;
@@ -28,7 +28,7 @@ export class DeleteEventComponent implements OnDestroy {
         this.error = false;
         console.log(res.message);
         // If successfully deleted event, redirect to Admin
-        this.router.navigate(["/admin"]);
+        this.router.navigate(['/admin']);
       },
       err => {
         console.error(err);

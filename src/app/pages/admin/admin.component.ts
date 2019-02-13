@@ -1,29 +1,29 @@
 // src/app/pages/admin/admin.component.ts
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { Title } from "@angular/platform-browser";
-import { AuthService } from "./../../auth/auth.service";
-import { ApiService } from "./../../core/api.service";
-import { UtilsService } from "./../../core/utils.service";
-import { FilterSortService } from "./../../core/filter-sort.service";
-import { Subscription } from "rxjs";
-import { EventModel } from "./../../core/models/event.model";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { AuthService } from './../../auth/auth.service';
+import { ApiService } from './../../core/api.service';
+import { UtilsService } from './../../core/utils.service';
+import { FilterSortService } from './../../core/filter-sort.service';
+import { Subscription } from 'rxjs/Subscription';
+import { EventModel } from './../../core/models/event.model';
 
-import { expandCollapse } from "./../../core/expand-collapse.animation";
+import { expandCollapse } from './../../core/expand-collapse.animation';
 
 @Component({
-  selector: "app-admin",
-  templateUrl: "./admin.component.html",
-  styleUrls: ["./admin.component.scss"],
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.scss'],
   animations: [expandCollapse]
 })
 export class AdminComponent implements OnInit, OnDestroy {
-  pageTitle = "Event Administration";
+  pageTitle = 'Event Administration';
   eventsSub: Subscription;
   eventList: EventModel[];
   filteredEvents: EventModel[];
   loading: boolean;
   error: boolean;
-  query = "";
+  query = '';
 
   constructor(
     private title: Title,
@@ -36,15 +36,15 @@ export class AdminComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.title.setTitle(this.pageTitle);
     this._getEventList();
-    this.loadStyle("../../../../node_modules/font-awesome/scss/font-awesome.scss");
-    //this.loadStyle("../../../assets/css/style.css");
-    this.loadScript("../../../assets/js/main.js");
+    this.loadStyle('../../../../node_modules/font-awesome/scss/font-awesome.scss');
+    // this.loadStyle('../../../assets/css/style.css');
+    this.loadScript('../../../assets/js/main.js');
   }
 
   public loadScript(url: string) {
     const body = <HTMLDivElement>document.body;
-    const script = document.createElement("script");
-    script.innerHTML = "";
+    const script = document.createElement('script');
+    script.innerHTML = '';
     script.src = url;
     script.async = false;
     script.defer = true;
@@ -54,16 +54,16 @@ export class AdminComponent implements OnInit, OnDestroy {
   public loadStyle(styl: string) {
     const head = <HTMLHeadElement>document.head;
     const style = document.createElement('link');
-    style.innerHTML = "";
+    style.innerHTML = '';
     style.rel = styl;
-    //style.async = false;
-    //style.defer = true;
+    // style.async = false;
+    // style.defer = true;
     head.appendChild(style);
   }
 
-  //getBackground(image) {
+  // getBackground(image) {
   //  return this._sanitizer.bypassSecurityTrustStyle(`linear-gradient(rgba(29, 29, 29, 0), rgba(16, 16, 23, 0.5)), url('../../${image}')`);
-  //}
+  // }
 
   private _getEventList() {
     this.loading = true;
@@ -84,11 +84,11 @@ export class AdminComponent implements OnInit, OnDestroy {
   }
 
   searchEvents() {
-    this.filteredEvents = this.fs.search(this.eventList, this.query, "_id");
+    this.filteredEvents = this.fs.search(this.eventList, this.query, '_id');
   }
 
   resetQuery() {
-    this.query = "";
+    this.query = '';
     this.filteredEvents = this.eventList;
   }
 

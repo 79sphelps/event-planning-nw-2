@@ -7,7 +7,7 @@ import { EventModel } from '../../core/models/event.model';
 
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
-//import { FooterService } from '../footer/footer.service';
+// import { FooterService } from '../footer/footer.service';
 
 @Component({
   selector: 'app-blog',
@@ -17,20 +17,20 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browse
 export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
-  pageTitle = "Events";
+  pageTitle = 'Events';
   eventListSub: Subscription;
   eventList: EventModel[];
 
   loading: boolean;
   error: boolean;
-  query: "";
+  query: '';
 
   @Output() viewLoaded = new EventEmitter();
 
   ngAfterViewInit() {
     // this.viewLoaded.next(true);
     setTimeout(() => {
-      this.viewLoaded.emit("true");
+      this.viewLoaded.emit('true');
     }, 500);
   }
 
@@ -39,7 +39,7 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
     public utils: UtilsService,
     private api: ApiService,
     private _sanitizer: DomSanitizer,
-    //private _footerService: FooterService
+    // private _footerService: FooterService
   ) {
   }
 
@@ -53,13 +53,13 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
     this.loadScript('../../../assets/js/jquery.stellar.min.js');
     this.loadScript('../../../assets/js/main.js');
     window.scrollTo({ top: -200, behavior: 'smooth' });
-    //this._footerService.setLoaded(true);
+    // this._footerService.setLoaded(true);
   }
 
   public loadScript(url: string) {
     const body = <HTMLDivElement>document.body;
-    const script = document.createElement("script");
-    script.innerHTML = "";
+    const script = document.createElement('script');
+    script.innerHTML = '';
     script.src = url;
     script.async = false;
     script.defer = true;

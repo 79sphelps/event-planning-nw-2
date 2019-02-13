@@ -5,7 +5,7 @@ import { UtilsService } from '../../core/utils.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Homepage } from '../../core/models/homepage.model';
 
-//import { FooterService } from '../footer/footer.service';
+// import { FooterService } from '../footer/footer.service';
 
 @Component({
   selector: 'app-about',
@@ -25,7 +25,7 @@ export class AboutComponent implements OnInit, OnDestroy {
     private title: Title,
     public utils: UtilsService,
     private api: ApiService,
-    //private _footerService: FooterService
+    // private _footerService: FooterService
   ) {
     this.my_image = '../../assets/images/rachel_phelps.JPG';
   }
@@ -36,13 +36,13 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.loadScript('../../assets/js/jquery.stellar.min.js');
     this.loadScript('../../assets/js/main.js');
     window.scrollTo({ top: -200, behavior: 'smooth' });
-    //this._footerService.setLoaded(true);
+    // this._footerService.setLoaded(true);
   }
 
   public loadScript(url: string) {
     const body = <HTMLDivElement>document.body;
-    const script = document.createElement("script");
-    script.innerHTML = "";
+    const script = document.createElement('script');
+    script.innerHTML = '';
     script.src = url;
     script.async = false;
     script.defer = true;

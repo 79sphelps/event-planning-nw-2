@@ -1,27 +1,27 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { Title } from "@angular/platform-browser";
-import { AuthService } from "./../../../auth/auth.service";
-import { ApiService } from "./../../../core/api.service";
-import { UtilsService } from "./../../../core/utils.service";
-import { FilterSortService } from "./../../../core/filter-sort.service";
-import { Subscription } from "rxjs";
-import { Personel } from "./../../../core/models/personel.model";
-import { expandCollapse } from "./../../../core/expand-collapse.animation";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { AuthService } from './../../../auth/auth.service';
+import { ApiService } from './../../../core/api.service';
+import { UtilsService } from './../../../core/utils.service';
+import { FilterSortService } from './../../../core/filter-sort.service';
+import { Subscription } from 'rxjs/Subscription';
+import { Personel } from './../../../core/models/personel.model';
+import { expandCollapse } from './../../../core/expand-collapse.animation';
 
 @Component({
-  selector: "app-personel",
-  templateUrl: "./personel.component.html",
-  styleUrls: ["./personel.component.scss"],
+  selector: 'app-personel',
+  templateUrl: './personel.component.html',
+  styleUrls: ['./personel.component.scss'],
   animations: [expandCollapse]
 })
 export class PersonelComponent implements OnInit, OnDestroy {
-  pageTitle = "Personel";
+  pageTitle = 'Personel';
   personelSub: Subscription;
   personelList: Personel[];
   filteredPersonel: Personel[];
   loading: boolean;
   error: boolean;
-  query = "";
+  query = '';
 
   constructor(
     private title: Title,
@@ -34,15 +34,15 @@ export class PersonelComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.title.setTitle(this.pageTitle);
     this._getPersonelList();
-    this.loadScript("../../../../assets/js/jquery.stellar.min.js");
-    this.loadScript("../../../../assets/js/main.js");
+    this.loadScript('../../../../assets/js/jquery.stellar.min.js');
+    this.loadScript('../../../../assets/js/main.js');
     window.scrollTo({ top: -200, behavior: 'smooth' });
   }
 
   public loadScript(url: string) {
     const body = <HTMLDivElement>document.body;
-    const script = document.createElement("script");
-    script.innerHTML = "";
+    const script = document.createElement('script');
+    script.innerHTML = '';
     script.src = url;
     script.async = false;
     script.defer = true;
@@ -71,12 +71,12 @@ export class PersonelComponent implements OnInit, OnDestroy {
     this.filteredPersonel = this.fs.search(
       this.personelList,
       this.query,
-      "_id"
+      '_id'
     );
   }
 
   resetQuery() {
-    this.query = "";
+    this.query = '';
     this.filteredPersonel = this.personelList;
   }
 

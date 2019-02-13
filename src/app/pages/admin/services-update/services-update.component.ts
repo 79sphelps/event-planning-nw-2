@@ -1,11 +1,11 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { Title } from "@angular/platform-browser";
-import { AuthService } from "./../../../auth/auth.service";
-import { ApiService } from "./../../../core/api.service";
-import { UtilsService } from "./../../../core/utils.service";
-import { ActivatedRoute } from "@angular/router";
-import { Subscription } from "rxjs";
-import { Service } from "./../../../core/models/services.model";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { AuthService } from './../../../auth/auth.service';
+import { ApiService } from './../../../core/api.service';
+import { UtilsService } from './../../../core/utils.service';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { Service } from './../../../core/models/services.model';
 
 @Component({
   selector: 'app-services-update',
@@ -13,7 +13,7 @@ import { Service } from "./../../../core/models/services.model";
   styleUrls: ['./services-update.component.scss']
 })
 export class ServicesUpdateComponent implements OnInit, OnDestroy {
-  pageTitle = "Update Service";
+  pageTitle = 'Update Service';
   routeSub: Subscription;
   serviceSub: Subscription;
   service: Service;
@@ -37,13 +37,13 @@ export class ServicesUpdateComponent implements OnInit, OnDestroy {
 
     // Set service ID from route params and subscribe
     this.routeSub = this.route.params.subscribe(params => {
-      this._id = params["id"];
+      this._id = params['id'];
       this._getService();
     });
 
     // Subscribe to query params to watch for tab changes
     this.tabSub = this.route.queryParams.subscribe(queryParams => {
-      this.tab = queryParams["tab"] || "edit";
+      this.tab = queryParams['tab'] || 'edit';
     });
   }
 

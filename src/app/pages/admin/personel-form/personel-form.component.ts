@@ -1,21 +1,21 @@
-import { Component, OnInit, OnDestroy, Input } from "@angular/core";
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
   Validators,
   AbstractControl
-} from "@angular/forms";
-import { Router } from "@angular/router";
-import { Subscription } from "rxjs";
-import { ApiService } from "./../../../core/api.service";
-import { Personel } from "./../../../core/models/personel.model";
-import { PersonelFormService } from "./personel-form.service";
-import { SubmittingComponent } from "../../../core/forms/submitting.component";
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { ApiService } from './../../../core/api.service';
+import { Personel } from './../../../core/models/personel.model';
+import { PersonelFormService } from './personel-form.service';
+import { SubmittingComponent } from '../../../core/forms/submitting.component';
 
 @Component({
-  selector: "app-personel-form",
-  templateUrl: "./personel-form.component.html",
-  styleUrls: ["./personel-form.component.scss"],
+  selector: 'app-personel-form',
+  templateUrl: './personel-form.component.html',
+  styleUrls: ['./personel-form.component.scss'],
   providers: [PersonelFormService]
 })
 export class PersonelFormComponent implements OnInit, OnDestroy {
@@ -50,7 +50,7 @@ export class PersonelFormComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.formErrors = this.ef.formErrors;
     this.isEdit = !!this.person;
-    this.submitBtnText = this.isEdit ? "Update Personel" : "Create Personel";
+    this.submitBtnText = this.isEdit ? 'Update Personel' : 'Create Personel';
     // Set initial form data
     this.formPersonel = this._setFormPersonel();
     // Use FormBuilder to construct the form
@@ -126,7 +126,7 @@ export class PersonelFormComponent implements OnInit, OnDestroy {
         const messages = this.ef.validationMessages[field];
         for (const key in control.errors) {
           if (control.errors.hasOwnProperty(key)) {
-            errorsObj[field] += messages[key] + "<br>";
+            errorsObj[field] += messages[key] + '<br>';
           }
         }
       }
@@ -136,7 +136,7 @@ export class PersonelFormComponent implements OnInit, OnDestroy {
     for (const field in this.formErrors) {
       if (this.formErrors.hasOwnProperty(field)) {
         // Clear previous error message (if any)
-        this.formErrors[field] = "";
+        this.formErrors[field] = '';
         _setErrMsgs(this.personelForm.get(field), this.formErrors, field);
       }
     }
@@ -144,10 +144,10 @@ export class PersonelFormComponent implements OnInit, OnDestroy {
 
   private _getSubmitObj() {
     return new Personel(
-      "",
-      this.personelForm.get("name").value,
-      this.personelForm.get("role").value,
-      this.personelForm.get("editable").value
+      '',
+      this.personelForm.get('name').value,
+      this.personelForm.get('role').value,
+      this.personelForm.get('editable').value
     );
   }
 
@@ -176,7 +176,7 @@ export class PersonelFormComponent implements OnInit, OnDestroy {
     this.error = false;
     this.submitting = false;
     // Redirect to person detail
-    this.router.navigate(["/admin/personel", res._id]);
+    this.router.navigate(['/admin/personel', res._id]);
   }
 
   private _handleSubmitError(err) {

@@ -1,14 +1,14 @@
-import { Injectable } from "@angular/core";
-// import { SubmittingComponent } from "../../../core/forms/submitting.component";
+import { Injectable } from '@angular/core';
+// import { SubmittingComponent } from '../../../core/forms/submitting.component';
 
 @Injectable()
 export class PersonelFormService {
   validationMessages: any;
   // Set up errors object
   formErrors = {
-    name: "",
-    role: "",
-    editable: ""
+    name: '',
+    role: '',
+    editable: ''
   };
 
   // Min/maxlength validation

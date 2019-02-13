@@ -1,16 +1,16 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { Title } from "@angular/platform-browser";
-import { AuthService } from "./../../../auth/auth.service";
-import { ApiService } from "./../../../core/api.service";
-import { UtilsService } from "./../../../core/utils.service";
-import { ActivatedRoute } from "@angular/router";
-import { Subscription } from "rxjs";
-import { Personel } from "./../../../core/models/personel.model";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { AuthService } from './../../../auth/auth.service';
+import { ApiService } from './../../../core/api.service';
+import { UtilsService } from './../../../core/utils.service';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { Personel } from './../../../core/models/personel.model';
 
 @Component({
-  selector: "app-person",
-  templateUrl: "./person.component.html",
-  styleUrls: ["./person.component.scss"]
+  selector: 'app-person',
+  templateUrl: './person.component.html',
+  styleUrls: ['./person.component.scss']
 })
 export class PersonComponent implements OnInit, OnDestroy {
   pageTitle: string;
@@ -45,13 +45,13 @@ export class PersonComponent implements OnInit, OnDestroy {
   private _routeSubs() {
     // Set person ID from route params and subscribe
     this.routeSub = this.route.params.subscribe(params => {
-      this.id = params["id"];
+      this.id = params['id'];
       this._getPerson();
     });
 
     // Subscribe to query params to watch for tab changes
     this.tabSub = this.route.queryParams.subscribe(queryParams => {
-      this.tab = queryParams["tab"] || "details";
+      this.tab = queryParams['tab'] || 'details';
     });
   }
 
@@ -68,7 +68,7 @@ export class PersonComponent implements OnInit, OnDestroy {
         console.error(err);
         this.loading = false;
         this.error = true;
-        this._setPageTitle("Person Details");
+        this._setPageTitle('Person Details');
       }
     );
   }

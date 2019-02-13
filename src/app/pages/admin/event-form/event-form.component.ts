@@ -1,32 +1,32 @@
 // src/app/pages/admin/event-form/event-form.component.ts
-import { Component, OnInit, OnDestroy, Input } from "@angular/core";
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
   Validators,
   AbstractControl
-} from "@angular/forms";
-import { Router } from "@angular/router";
-import { Subscription } from "rxjs";
-import { ApiService } from "./../../../core/api.service";
-import { EventModel } from "./../../../core/models/event.model";
-// import { DatePipe } from "@angular/common";
-// import { dateValidator } from "./../../../core/forms/date.validator";
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { ApiService } from './../../../core/api.service';
+import { EventModel } from './../../../core/models/event.model';
+// import { DatePipe } from '@angular/common';
+// import { dateValidator } from './../../../core/forms/date.validator';
 
 /*
 import {
   DATE_REGEX,
   TIME_REGEX,
   stringsToDate
-} from "./../../../core/forms/formUtils.factory";
+} from './../../../core/forms/formUtils.factory';
 */
-import { EventFormService } from "./event-form.service";
-// import { SubmittingComponent } from "../../../core/forms/submitting.component";
+import { EventFormService } from './event-form.service';
+// import { SubmittingComponent } from '../../../core/forms/submitting.component';
 
 @Component({
-  selector: "app-event-form",
-  templateUrl: "./event-form.component.html",
-  styleUrls: ["./event-form.component.scss"],
+  selector: 'app-event-form',
+  templateUrl: './event-form.component.html',
+  styleUrls: ['./event-form.component.scss'],
   providers: [EventFormService]
 })
 export class EventFormComponent implements OnInit, OnDestroy {
@@ -63,7 +63,7 @@ export class EventFormComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.formErrors = this.ef.formErrors;
     this.isEdit = !!this.event;
-    this.submitBtnText = this.isEdit ? "Update Event" : "Create Event";
+    this.submitBtnText = this.isEdit ? 'Update Event' : 'Create Event';
     // Set initial form data
     this.formEvent = this._setFormEvent();
     // Use FormBuilder to construct the form
@@ -94,7 +94,7 @@ export class EventFormComponent implements OnInit, OnDestroy {
       // https://angular.io/api/common/DatePipe
       // _shortDate: 1/7/2017
       // 'shortTime': 12:05 PM
-      //const _shortDate = "M/d/yyyy";
+      // const _shortDate = 'M/d/yyyy';
       return new EventModel(
         this.event.title,
         this.event.location,
@@ -165,7 +165,7 @@ export class EventFormComponent implements OnInit, OnDestroy {
       ]
     });
     // Set local property to eventForm datesGroup control
-    // this.datesGroup = this.eventForm.get("datesGroup");
+    // this.datesGroup = this.eventForm.get('datesGroup');
 
     // Subscribe to form value changes
     this.formChangeSub = this.eventForm.valueChanges.subscribe(data =>
@@ -203,7 +203,7 @@ export class EventFormComponent implements OnInit, OnDestroy {
         const messages = this.ef.validationMessages[field];
         for (const key in control.errors) {
           if (control.errors.hasOwnProperty(key)) {
-            errorsObj[field] += messages[key] + "<br>";
+            errorsObj[field] += messages[key] + '<br>';
           }
         }
       }
@@ -214,7 +214,7 @@ export class EventFormComponent implements OnInit, OnDestroy {
       if (this.formErrors.hasOwnProperty(field)) {
         // Set errors for fields not inside datesGroup
         // Clear previous error message (if any)
-        this.formErrors[field] = "";
+        this.formErrors[field] = '';
         _setErrMsgs(this.eventForm.get(field), this.formErrors, field);
       }
     }
@@ -224,16 +224,16 @@ export class EventFormComponent implements OnInit, OnDestroy {
     // Convert form startDate/startTime and endDate/endTime
     // to JS dates and populate a new EventModel for submission
     return new EventModel(
-      this.eventForm.get("title").value,
-      this.eventForm.get("location").value,
-      this.eventForm.get("groupSize").value,
-      this.eventForm.get("eventType").value,
-      this.eventForm.get("price").value,
-      this.eventForm.get("purpose").value,
-      this.eventForm.get("viewPublic").value,
-      this.eventForm.get("thumbnail").value,
-      this.eventForm.get("description").value,
-      this.eventForm.get("editable").value,
+      this.eventForm.get('title').value,
+      this.eventForm.get('location').value,
+      this.eventForm.get('groupSize').value,
+      this.eventForm.get('eventType').value,
+      this.eventForm.get('price').value,
+      this.eventForm.get('purpose').value,
+      this.eventForm.get('viewPublic').value,
+      this.eventForm.get('thumbnail').value,
+      this.eventForm.get('description').value,
+      this.eventForm.get('editable').value,
       this.event ? this.event._id : null
     );
   }
@@ -263,7 +263,7 @@ export class EventFormComponent implements OnInit, OnDestroy {
     this.error = false;
     this.submitting = false;
     // Redirect to event detail
-    this.router.navigate(["/event", res._id]);
+    this.router.navigate(['/event', res._id]);
   }
 
   private _handleSubmitError(err) {

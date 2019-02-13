@@ -6,13 +6,42 @@
       </div>
     </div>
     <div class="row no-gutters">
+
+      <!--
+      <div *ngFor="let image of randomImageList; let i = index; " style="width: 20%;">
+        <div class="col-sm-12 col-md ftco-animate2">
+          <a [attr.href]='getHREF(image.path)' class="instagram insta-img image-popup" [style.background-image]="getBackground(image.path)" >
+              <div class="icon d-flex justify-content-center">
+                <span class="icon-instagram align-self-center"></span>
+              </div>
+          </a>
+        </div>
+      </div>
+      -->
+
+
+      <!--
+      <div hidden>{{ randomImageList && randomImageList.length }}</div>
+      {{ randomImageList[0].path }}
+
       <div class="col-sm-12 col-md ftco-animate">
-        <a href="../../../../assets/images/photo-1.jpg" class="insta-img image-popup" style="background-image: url(../../../../assets/images/photo-1.jpg);">
+        <a [attr.href]='getHREF(randomImageList[0].path)' class="insta-img image-popup" [style.background-image]="getBackground(randomImageList[0].path)">
           <div class="icon d-flex justify-content-center">
             <span class="icon-instagram align-self-center"></span>
           </div>
         </a>
       </div>
+      -->
+
+
+
+      <div class="col-sm-12 col-md ftco-animate">
+          <a href="../../../../assets/images/photo-1.jpg" class="insta-img image-popup" style="background-image: url(../../../../assets/images/photo-1.jpg);">
+            <div class="icon d-flex justify-content-center">
+              <span class="icon-instagram align-self-center"></span>
+            </div>
+          </a>
+        </div>
       <div class="col-sm-12 col-md ftco-animate">
         <a href="../../../../assets/images/photo-2.jpg" class="insta-img image-popup" style="background-image: url(../../../../assets/images/photo-2.jpg);">
           <div class="icon d-flex justify-content-center">
@@ -41,6 +70,7 @@
           </div>
         </a>
       </div>
+
     </div>
   </div>
 </section>

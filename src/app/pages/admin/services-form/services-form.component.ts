@@ -1,16 +1,16 @@
-import { Component, OnInit, OnDestroy, Input } from "@angular/core";
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
   Validators,
   AbstractControl
-} from "@angular/forms";
-import { Router } from "@angular/router";
-import { Subscription } from "rxjs";
-import { ApiService } from "./../../../core/api.service";
-import { Service } from "./../../../core/models/services.model";
-import { ServicesFormService } from "./services-form.service";
-// import { SubmittingComponent } from "../../../core/forms/submitting.component";
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { ApiService } from './../../../core/api.service';
+import { Service } from './../../../core/models/services.model';
+import { ServicesFormService } from './services-form.service';
+// import { SubmittingComponent } from '../../../core/forms/submitting.component';
 
 @Component({
   selector: 'app-services-form',
@@ -51,7 +51,7 @@ export class ServicesFormComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.formErrors = this.ef.formErrors;
     this.isEdit = !!this.service;
-    this.submitBtnText = this.isEdit ? "Update Service" : "Create Service";
+    this.submitBtnText = this.isEdit ? 'Update Service' : 'Create Service';
     // Set initial form data
     this.formService = this._setFormService();
     // Use FormBuilder to construct the form
@@ -123,7 +123,7 @@ export class ServicesFormComponent implements OnInit, OnDestroy {
         const messages = this.ef.validationMessages[field];
         for (const key in control.errors) {
           if (control.errors.hasOwnProperty(key)) {
-            errorsObj[field] += messages[key] + "<br>";
+            errorsObj[field] += messages[key] + '<br>';
           }
         }
       }
@@ -134,7 +134,7 @@ export class ServicesFormComponent implements OnInit, OnDestroy {
       if (this.formErrors.hasOwnProperty(field)) {
         // Set errors for fields
         // Clear previous error message (if any)
-        this.formErrors[field] = "";
+        this.formErrors[field] = '';
         _setErrMsgs(this.serviceForm.get(field), this.formErrors, field);
       }
     }
@@ -142,10 +142,10 @@ export class ServicesFormComponent implements OnInit, OnDestroy {
 
   private _getSubmitObj() {
     return new Service(
-      "",
-      this.serviceForm.get("title").value,
-      this.serviceForm.get("description").value,
-      this.serviceForm.get("thumbnail").value
+      '',
+      this.serviceForm.get('title').value,
+      this.serviceForm.get('description').value,
+      this.serviceForm.get('thumbnail').value
     );
   }
 
@@ -175,7 +175,7 @@ export class ServicesFormComponent implements OnInit, OnDestroy {
     this.error = false;
     this.submitting = false;
     // Redirect to service detail
-    this.router.navigate(["/admin/services", res._id]);
+    this.router.navigate(['/admin/services', res._id]);
   }
 
   private _handleSubmitError(err) {

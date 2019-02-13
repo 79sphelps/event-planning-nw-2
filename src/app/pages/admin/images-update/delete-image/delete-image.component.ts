@@ -1,13 +1,13 @@
-import { Component, OnDestroy, Input } from "@angular/core";
-import { Image } from "./../../../../core/models/images.model";
-import { Subscription } from "rxjs";
-import { ApiService } from "./../../../../core/api.service";
-import { Router } from "@angular/router";
+import { Component, OnDestroy, Input } from '@angular/core';
+import { Image } from './../../../../core/models/images.model';
+import { Subscription } from 'rxjs/Subscription';
+import { ApiService } from './../../../../core/api.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-delete-image",
-  templateUrl: "./delete-image.component.html",
-  styleUrls: ["./delete-image.component.scss"]
+  selector: 'app-delete-image',
+  templateUrl: './delete-image.component.html',
+  styleUrls: ['./delete-image.component.scss']
 })
 export class DeleteImageComponent implements OnDestroy {
   @Input()
@@ -28,7 +28,7 @@ export class DeleteImageComponent implements OnDestroy {
         this.error = false;
         console.log(res.message);
         // If successfully deleted event, redirect to Admin
-        this.router.navigate(["/admin/images"]);
+        this.router.navigate(['/admin/images']);
       },
       err => {
         console.error(err);

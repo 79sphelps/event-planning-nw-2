@@ -49,7 +49,7 @@ export class SliderComponent implements OnInit, OnDestroy, AfterViewInit {
     this.loadScript('../../../../assets/js/jquery.stellar.min.js');
     this.loadScript('../../../../assets/js/popper.min.js');
     this.loadScript('../../../../assets/js/main.js');
-    //window.scrollTo({ top: -200, behavior: 'smooth' });
+    // window.scrollTo({ top: -200, behavior: 'smooth' });
   }
 
   public loadScript(url: string) {

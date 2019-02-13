@@ -6,10 +6,10 @@ export class ServicesFormService {
   validationMessages: any;
   // Set up errors object
   formErrors = {
-    caption: "",
-    path: "",
-    editable: "",
-    description: ""
+    caption: '',
+    path: '',
+    editable: '',
+    description: ''
   };
 
   // Min/maxlength validation

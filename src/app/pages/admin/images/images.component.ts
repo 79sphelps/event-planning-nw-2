@@ -1,28 +1,28 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { Title } from "@angular/platform-browser";
-import { AuthService } from "./../../../auth/auth.service";
-import { ApiService } from "./../../../core/api.service";
-import { UtilsService } from "./../../../core/utils.service";
-import { FilterSortService } from "./../../../core/filter-sort.service";
-import { Subscription } from "rxjs";
-import { Image } from "./../../../core/models/images.model";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { AuthService } from './../../../auth/auth.service';
+import { ApiService } from './../../../core/api.service';
+import { UtilsService } from './../../../core/utils.service';
+import { FilterSortService } from './../../../core/filter-sort.service';
+import { Subscription } from 'rxjs/Subscription';
+import { Image } from './../../../core/models/images.model';
 
-import { expandCollapse } from "./../../../core/expand-collapse.animation";
+import { expandCollapse } from './../../../core/expand-collapse.animation';
 
 @Component({
-  selector: "app-images",
-  templateUrl: "./images.component.html",
-  styleUrls: ["./images.component.scss"],
+  selector: 'app-images',
+  templateUrl: './images.component.html',
+  styleUrls: ['./images.component.scss'],
   animations: [expandCollapse]
 })
 export class ImagesComponent implements OnInit, OnDestroy {
-  pageTitle = "Images";
+  pageTitle = 'Images';
   imagesSub: Subscription;
   imageList: Image[];
   filteredImages: Image[];
   loading: boolean;
   error: boolean;
-  query = "";
+  query = '';
 
   constructor(
     private title: Title,
@@ -35,15 +35,15 @@ export class ImagesComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.title.setTitle(this.pageTitle);
     this._getImageList();
-    this.loadScript("../../../../assets/js/jquery.stellar.min.js");
-    this.loadScript("../../../../assets/js/main.js");
+    this.loadScript('../../../../assets/js/jquery.stellar.min.js');
+    this.loadScript('../../../../assets/js/main.js');
     window.scrollTo({ top: -200, behavior: 'smooth' });
   }
 
   public loadScript(url: string) {
     const body = <HTMLDivElement>document.body;
-    const script = document.createElement("script");
-    script.innerHTML = "";
+    const script = document.createElement('script');
+    script.innerHTML = '';
     script.src = url;
     script.async = false;
     script.defer = true;
@@ -69,11 +69,11 @@ export class ImagesComponent implements OnInit, OnDestroy {
   }
 
   searchImages() {
-    this.filteredImages = this.fs.search(this.imageList, this.query, "_id");
+    this.filteredImages = this.fs.search(this.imageList, this.query, '_id');
   }
 
   resetQuery() {
-    this.query = "";
+    this.query = '';
     this.filteredImages = this.imageList;
   }
 

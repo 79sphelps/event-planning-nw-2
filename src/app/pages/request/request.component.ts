@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { FooterService } from '../../footer/footer.service';
+// import { FooterService } from '../../footer/footer.service';
 
 @Component({
   selector: 'app-request',
@@ -9,14 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class RequestComponent implements OnInit {
 
   constructor(
-    //private _footerService: FooterService
+    // private _footerService: FooterService
   ) { }
 
   ngOnInit() {
     this.loadScript('../../../assets/js/jquery.stellar.min.js');
     this.loadScript('../../../assets/js/main.js');
     window.scrollTo({ top: -200, behavior: 'smooth' });
-    //this._footerService.setLoaded(true);
+    // this._footerService.setLoaded(true);
   }
 
   public loadScript(url: string) {

@@ -21,10 +21,10 @@ export class HomeSliderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    //this.loadScript('../../assets/js/jquery.stellar.min.js');
-    //this.loadScript('../../assets/js/owl.carousel.min.js');
-    //this.loadScript('../../assets/js/main.js');
-    //this.loadStyle('../../assets/css/style.css');
+    // this.loadScript('../../assets/js/jquery.stellar.min.js');
+    // this.loadScript('../../assets/js/owl.carousel.min.js');
+    // this.loadScript('../../assets/js/main.js');
+    // this.loadStyle('../../assets/css/style.css');
   }
 
   public loadScript(url: string) {
@@ -42,8 +42,8 @@ export class HomeSliderComponent implements OnInit, AfterViewInit {
     const style = document.createElement('link');
     style.innerHTML = '';
     style.rel = styl;
-    //style.async = false;
-    //style.defer = true;
+    // style.async = false;
+    // style.defer = true;
     head.appendChild(style);
   }
 

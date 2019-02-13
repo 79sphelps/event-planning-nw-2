@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-//import { FooterService } from './footer.service';
+// import { FooterService } from './footer.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,7 +10,7 @@ export class FooterComponent implements OnInit, AfterViewInit {
   loadFooterFlag: boolean;
 
   constructor(
-    //private _footerService: FooterService
+    // private _footerService: FooterService
     ) { }
 
   ngOnInit() {
@@ -19,7 +19,7 @@ export class FooterComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-        //this.loadFooterFlag = this._footerService.checkLoaded();
+        // this.loadFooterFlag = this._footerService.checkLoaded();
     }, 3000);
 
   }

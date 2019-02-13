@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { EventModel } from '../../../core/models/event.model';
 
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
-//import { FooterService } from '../footer/footer.service';
+// import { FooterService } from '../footer/footer.service';
 
 @Component({
   selector: 'app-blog-entry',
@@ -29,16 +29,16 @@ export class BlogEntryComponent implements OnInit, AfterViewInit {
     public utils: UtilsService,
     private api: ApiService,
     private _sanitizer: DomSanitizer,
-    //private _footerService: FooterService
+    // private _footerService: FooterService
   ) {
   }
 
   ngOnInit() {
-    //this.title.setTitle(this.pageTitle);
+    // this.title.setTitle(this.pageTitle);
     this.loadScript('../../../../assets/js/jquery.stellar.min.js');
     this.loadScript('../../../../assets/js/main.js');
     window.scrollTo({ top: -200, behavior: 'smooth' });
-    //this._footerService.setLoaded(true);
+    // this._footerService.setLoaded(true);
   }
 
   public loadScript(url: string) {
