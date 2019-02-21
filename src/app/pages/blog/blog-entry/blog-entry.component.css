@@ -1,5 +1,59 @@
 
 
+.blog-entry {
+  background: #fff;
+}
+@media (min-width: 768px) {
+  .blog-entry {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 767.98px) {
+  .blog-entry {
+    margin-bottom: 30px;
+  }
+}
+.blog-entry .text {
+  position: relative;
+  border-top: 0;
+  border-radius: 2px;
+}
+.blog-entry .text .heading {
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+.blog-entry .text .heading a {
+  color: #404044;
+}
+.blog-entry .text .heading a:hover,
+.blog-entry .text .heading a:focus,
+.blog-entry .text .heading a:active {
+  color: #ffb400;
+}
+.blog-entry .text .meta-chat {
+  color: #a5a5ab;
+}
+.blog-entry .text .read {
+  color: #404044;
+  font-size: 14px;
+}
+.blog-entry .meta > div {
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+.blog-entry .meta > div a {
+  color: #a5a5ab;
+  font-size: 15px;
+}
+.blog-entry .meta > div a:hover {
+  color: white;
+}
+
+
+
 /* Blog*/
 .post-info {
     font-size: 12px;
@@ -16,7 +70,7 @@
     margin: 0 10px;
     opacity: 0.5;
   }
-  
+
   .tagcloud a {
     text-transform: uppercase;
     display: inline-block;
@@ -31,11 +85,11 @@
   .tagcloud a:hover {
     border: 1px solid #000;
   }
-  
+
   .comment-form-wrap {
     clear: both;
   }
-  
+
   .comment-list {
     padding: 0;
     margin: 0;
@@ -89,7 +143,7 @@
     color: #fff;
     background: #404044;
   }
-  
+
   .search-form {
     background: white;
     padding: 10px;
@@ -108,7 +162,7 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
-  
+
   .subscribe-form .form-group {
     position: relative;
     margin-bottom: 0;
@@ -135,7 +189,7 @@
     /* Firefox 18- */
     color: rgba(255, 255, 255, 0.5) !important;
   }
-  
+
   .subscribe-form .icon {
     position: absolute;
     top: 50%;
@@ -144,7 +198,7 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
-  
+
   .sidebar-box {
     margin-bottom: 30px;
     padding: 25px;
@@ -160,7 +214,7 @@
     font-size: 18px;
     margin-bottom: 15px;
   }
-  
+
   .categories li,
   .sidelink li {
     position: relative;

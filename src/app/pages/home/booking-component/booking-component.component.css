@@ -2,7 +2,7 @@
 .ftco-section-reservation {
     clear: both;
   }
-  
+
   .reservation {
     background: #ffb400;
   }
@@ -16,12 +16,12 @@
       padding-bottom: 3em;
     }
   }
-  
+
   .makereservation .form-group label {
     font-weight: 600;
     color: #404044;
   }
-  
+
   .makereservation .form-group .icon {
     position: absolute;
     top: 50% !important;
@@ -37,7 +37,7 @@
       right: 10px;
     }
   }
-  
+
   .makereservation .form-group .select-wrap {
     position: relative;
   }
