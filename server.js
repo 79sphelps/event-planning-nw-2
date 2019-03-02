@@ -13,6 +13,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const cors = require("cors");
+const compression = require("compression");
 
 // Config
 const config = require("./server/config");
@@ -47,6 +48,8 @@ monDb.once("open", () => {
  */
 
 const app = express();
+
+app.use(compression());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
