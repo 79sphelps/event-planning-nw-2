@@ -1,0 +1,30 @@
+.services {
+	position: relative;
+	&:before {
+		position: absolute;
+		content: "";
+		background: #fff8e6;
+	}
+	&:after {
+		position: absolute;
+		content: "";
+		background: #fff8e6;
+	}
+	.icon {
+		width: 120px;
+		height: 120px;
+		background: white;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-ms-border-radius: 50%;
+		border-radius: 50%;
+		span {
+			color: #ffb400;
+		}
+	}
+	.media-body {
+		.heading {
+			font-size: 20px;
+		}
+	}
+}

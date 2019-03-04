@@ -25,10 +25,10 @@
 
 
   <div class="collapse navbar-collapse navbar-ex1-collapse" [ngClass]="{ 'show': navbarOpen }">
-    <div class="header-page-authStatus">
+    <div class="header-page-authStatus" style="color: white; cursor: pointer;">
       <span *ngIf="auth.loggingIn">Logging in...</span>
       <ng-template [ngIf]="!auth.loggingIn">
-        <a *ngIf="!auth.loggedIn" (click)="auth.login()" class="login">Log In </a>
+        <a *ngIf="!auth.loggedIn" (click)="auth.login()" class="login" >Log In </a>
         <span *ngIf="auth.loggedIn && auth.userProfile" class="login">
           {{ auth.userProfile.name }} <span class="divider"> | </span>
           <a (click)="auth.logout()" class="login">Log Out </a>
@@ -48,7 +48,7 @@
     </ul>
     -->
     <ul class="navbar-nav ml-auto">
-    
+
       <li (click)="onMenuClick()" [class]="getActiveStatus('/')">
         <a href="/" routerLink="/"  class="nav-link">Home</a>
       </li>
@@ -80,7 +80,7 @@
 
       <li (click)="onMenuClick()" *ngIf="auth.loggedIn && auth.isAdmin" [class]="getActiveStatus('/admin/services')">
         <a href="/admin/services" routerLink="/admin/services" routerLinkActive="active" class="nav-link">Services</a>
-      </li>      
+      </li>
 
       <li (click)="onMenuClick()" *ngIf="auth.loggedIn && auth.isAdmin" [class]="getActiveStatus('/admin/event/new')">
         <a href="/admin/event/new" routerLink="/admin/event/new" routerLinkActive="active" class="nav-link">Create Event</a>
@@ -98,12 +98,12 @@
 
       <li (click)="onMenuClick()" *ngIf="auth.loggedIn && auth.isAdmin" [class]="getActiveStatus('/admin/requests')">
         <a href="/admin/requests" routerLink="/admin/requests" routerLinkActive="active" class="nav-link">Requests</a>
-      </li>        
+      </li>
 
       <li (click)="onMenuClick()" *ngIf="auth.loggedIn && auth.isAdmin" [class]="getActiveStatus('/admin/testimonials')">
         <a href="/admin/testimonials" routerLink="/admin/testimonials" routerLinkActive="active" class="nav-link">Testimonials</a>
-      </li>  
-      -->       
+      </li>
+      -->
     </ul>
 
 

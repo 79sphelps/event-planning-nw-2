@@ -1,0 +1,15 @@
+.special-event {
+	margin-top: -200px;
+	.container {
+		z-index: 2;
+		position: relative;
+		padding: 30px;
+	}
+}
+@media (min-width: 768px) {
+	.special-event {
+		.container {
+			padding: 70px;
+		}
+	}
+}
