@@ -1,5 +1,9 @@
 # Event Planning NW
 
+This is an older project from 2018. It does not implement any type of Redux pattern with NgRX/RxJS.
+
+Custom event site for a business in Happy Valley built with MEAN stack using Bootstrap 4. It includes APIs for authorized CRUD operations, authentication and access management with automatic JWT renewal (via OAuth), and simple/complex forms with custom validation. It includes client-side unit tests (WIP) and server-side unit tests mocked using the nock library.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
 ## Development server
